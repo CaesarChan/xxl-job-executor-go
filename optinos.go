@@ -13,6 +13,7 @@ type Options struct {
 	ExecutorPort string        `json:"executor_port"` //本地(执行器)端口
 	RegistryKey  string        `json:"registry_key"`  //执行器名称
 	LogDir       string        `json:"log_dir"`       //日志目录
+	AppName      string        `json:"app_name"`      //应用名称
 
 	l Logger //日志处理
 }
@@ -81,5 +82,12 @@ func RegistryKey(registryKey string) Option {
 func SetLogger(l Logger) Option {
 	return func(o *Options) {
 		o.l = l
+	}
+}
+
+// AppName 请求令牌
+func AppName(appName string) Option {
+	return func(o *Options) {
+		o.AppName = appName
 	}
 }

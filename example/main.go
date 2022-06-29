@@ -15,6 +15,7 @@ func main() {
 		xxl.ExecutorPort("9999"),       //默认9999（非必填）
 		xxl.RegistryKey("golang-jobs"), //执行器名称
 		xxl.SetLogger(&logger{}),       //自定义日志
+		xxl.AppName("golang-jobs"),
 	)
 	exec.Init()
 	//设置日志查看handler

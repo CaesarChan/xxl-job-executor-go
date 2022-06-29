@@ -333,6 +333,7 @@ func (e *executor) post(action, body string) (resp *http.Response, err error) {
 	}
 	request.Header.Set("Content-Type", "application/json;charset=UTF-8")
 	request.Header.Set("XXL-JOB-ACCESS-TOKEN", e.opts.AccessToken)
+	request.Header.Set("APP_NAME", e.opts.AppName)
 	client := http.Client{
 		Timeout: e.opts.Timeout,
 	}
